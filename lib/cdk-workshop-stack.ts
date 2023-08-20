@@ -3,7 +3,6 @@ import * as lambda from  'aws-cdk-lib/aws-lambda';
 import { Construct } from 'constructs';
 import * as apigw from 'aws-cdk-lib/aws-apigateway'
 import { HitCounter } from './constructs/hitcounter';
-import { TableViewer } from 'cdk-dynamo-table-viewer';
 
 
 export class CdkWorkshopStack extends Stack {
@@ -28,12 +27,6 @@ export class CdkWorkshopStack extends Stack {
       handler: helloWithCounter.handler
     })
 
-    const tableView = new TableViewer(this, 'HitsViewer', {
-      title: 'view hits',
-      table: helloWithCounter.table,
-      sortBy: '-path'
-
-    })
 
   }
 
