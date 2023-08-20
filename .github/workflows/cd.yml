@@ -31,7 +31,7 @@ jobs:
         run: npm run test
 
       - name: Diff AWS CDK Stack
-        run: "npx cdk deploy CdkWorkshopStack --ci --require-approval-never --no-asset-metadata"
+        run: "npx cdk deploy CdkWorkshopStack --ci --require-approval never --no-asset-metadata"
         env:
           AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
           AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
