@@ -22,13 +22,13 @@ jobs:
         uses: actions/setup-node@v3
 
       - name: Install dependencies
-        uses: nvm ci
+        run: nvm ci
 
       - name: Build CDK Stack
-        uses: nvm run build
+        run: nvm run build
 
       - name: Run unit tests
-        uses: nvm run test
+        run: nvm run test
 
       - name: Diff AWS CDK Stack
         run: "npx cdk deploy cdkworkshop --ci --require-approval-never --no-asset-metadata"
